@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a0a0a 100%);
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 213, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(156, 39, 176, 0.1) 0%, transparent 50%);
+    animation: particleMove 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+#contenedor-principal {
+    position: relative;
+    z-index: 1;
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 0, 0, 0.2),
+                0 0 100px rgba(0, 213, 255, 0.1);
+    animation: containerPulse 3s ease-in-out infinite;
+}
+
+
+#titulo-principal {
+    position: relative;
+    animation: titleGlow 2s ease-in-out infinite, float 3s ease-in-out infinite;
+    background: linear-gradient(45deg, #f9f9f9, #ff0000, #00d5ff, #f9f9f9);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 2s ease-in-out infinite, float 3s ease-in-out infinite, gradientShift 5s ease infinite;
+}
+
+
+#nombre-smith {
+    display: inline-block;
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+hr {
+    border: none;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ff0000, #00d5ff, #ff0000, transparent);
+    background-size: 200% 100%;
+    animation: lineFlow 3s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+
+h2, h3, h4, h5, h6 {
+    position: relative;
+    overflow: hidden;
+}
+
+h2::after, h3::after, h4::after, h5::after, h6::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shine 3s infinite;
+}
+
+mark {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+span {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+span:hover {
+    transform: scale(1.1) rotate(-2deg);
+    filter: brightness(1.5) drop-shadow(0 0 10px currentColor);
+}
+
+
+pre {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+pre:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2) contrast(1.1);
+}
+
+#doge-meme {
+    animation: dogeFloat 4s ease-in-out infinite;
+}
+
+
+figure {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+
+figure:hover::before {
+    opacity: 0.5;
+}
+
+figure:hover {
+    transform: scale(1.05) translateZ(20px);
+}
+
+#figura-cod-bo2 {
+    animation: codGlow 2s ease-in-out infinite;
+}
+
+
+#figura-dbd {
+    animation: dbdGlow 2s ease-in-out infinite;
+}
+
+
+
+#figura-naruto {
+    animation: narutoGlow 2s ease-in-out infinite;
+}
+
+
+#figura-kendrick {
+    animation: kendrickGlow 2s ease-in-out infinite;
+}
+
+
+a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+a:hover::before {
+    width: 100%;
+}
+
+a:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.5);
+    text-shadow: 0 0 10px currentColor;
+}
+
+
+p {
+    line-height: 1.8;
+    transition: all 0.3s ease;
+}
+
+p:hover {
+    transform: translateX(5px);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.footer-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+#cierre {
+    animation: finalGlow 3s ease-in-out infinite;
+}
+
+
+b, strong {
+    animation: boldPulse 2s ease-in-out infinite;
+}
+
+
+em, i {
+    animation: italicWave 3s ease-in-out infinite;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+::selection {
+    background: rgba(255, 0, 0, 0.3);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+
+#contenedor-principal > div {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+#seccion-header { animation-delay: 0.1s; }
+#seccion-2pac { animation-delay: 0.2s; }
+#seccion-nostalgia { animation-delay: 0.3s; }
+#seccion-memes { animation-delay: 0.4s; }
+#seccion-juegos { animation-delay: 0.5s; }
+#seccion-entretenimiento { animation-delay: 0.6s; }
+#seccion-footer { animation-delay: 0.7s; }
