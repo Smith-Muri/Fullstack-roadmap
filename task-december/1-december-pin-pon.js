@@ -17,10 +17,10 @@ console.log("Posiciones");
 
 let puntaje1 = 0
 let puntaje2 = 0;
-const jugadores = ["María", "Pedro"];
+let jugadores = ["María", "Pedro"];
 
 while (puntaje1 < 11 && puntaje2 < 11) {
- pinPon(jugadores[0], jugadores[1], puntaje1, puntaje2);
+  pinPon(jugadores[0], jugadores[1], puntaje1, puntaje2);
 
  
   if (Math.random() > 0.5) {
