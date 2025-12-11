@@ -591,34 +591,35 @@ const bookCollection = [
 ];
 
 
-function getBooksByChaptersNumber(numero1){
+// function getBooksByChaptersNumber(numero1){
 
-    let arrayFinal = []
-    for(let i = 0; i <bookCollection.length; i++){
-        if(bookCollection[i].chapters >= numero1)
-            arrayFinal.push(bookCollection[i]);
-    }
+//     let arrayFinal = []
+//     for(let i = 0; i <bookCollection.length; i++){
+//         if(bookCollection[i].chapters >= numero1){
+//             arrayFinal.push(bookCollection[i]);
+//         }
+//     }
 
-    return arrayFinal;
+//     return arrayFinal;
 
-}
+// }
 
-console.log(getBooksByChaptersNumber(3))
+// console.log(getBooksByChaptersNumber(3))
 
 
 
-function getBooksByGenre(genere) {
+// function getBooksByGenre(genere) {
 
-    let arrayFinal = []
-    for (let i = 0; i < bookCollection.length; i++) {
-        if (bookCollection[i].genre = genere) {
-            arrayFinal.push(bookCollection[i]);
-        }
-    }
-    return arrayFinal;
-}
+//     let arrayFinal = []
+//     for (let i = 0; i < bookCollection.length; i++) {
+//         if (bookCollection[i].genre.includes(genere)) {
+//             arrayFinal.push(bookCollection[i]);
+//         }
+//     }
+//     return arrayFinal;
+// }
 
-console.log(getBooksByGenre("Dystopian"))
+// console.log(getBooksByGenre("Dystopian"))
 
 
 
