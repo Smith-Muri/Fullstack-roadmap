@@ -591,50 +591,33 @@ const bookCollection = [
 ];
 
 
-// function getBooksByChaptersNumber(numero1){
 
-//     let arrayFinal = []
-//     for(let i = 0; i <bookCollection.length; i++){
-//         if(bookCollection[i].chapters >= numero1){
-//             arrayFinal.push(bookCollection[i]);
-//         }
-//     }
+function twoGeneres(bookCollection) {
 
-//     return arrayFinal;
+    let arrayWords = ["Adventure", "Science Fiction", "Dystopian"];
+    let arrayFinal = [];
 
-// }
-
-// console.log(getBooksByChaptersNumber(3))
-
-
-
-function getBooksByGenre(genere) {
-
-    let arrayFinal = []
     for (let i = 0; i < bookCollection.length; i++) {
-        if (bookCollection[i].genre.includes(genere)) {
-            arrayFinal.push(bookCollection[i]);
+
+        let contador = 0;
+
+        for (let j = 0; j < bookCollection[i].genre.length; j++) {
+            if (arrayWords.includes(bookCollection[i].genre[j])) {
+                contador++;
+            }
+        }
+
+        if (count >= 2) {
+            arrayFinal.push({
+                title: bookCollection[i].title,
+                genre: bookCollection[i].genre
+            });
         }
     }
+
     return arrayFinal;
 }
 
-console.log(getBooksByGenre("Dystopian"))
+console.log(twoGeneres(bookCollection));
 
 
-
-function getBooksByAmazonRating(numero){
-
-    let arrayFinal = []
-
-    for(let i = 0; i < bookCollection.length; i++){
-        if(bookCollection[i].ratings >= numero ){
-            arrayFinal.push(bookCollection[i]);
-        }
-    }
-
-    return arrayFinal;
-
-}   
-
-console.log(getBooksByAmazonRating(3.0))

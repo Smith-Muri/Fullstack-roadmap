@@ -591,50 +591,39 @@ const bookCollection = [
 ];
 
 
-// function getBooksByChaptersNumber(numero1){
 
-//     let arrayFinal = []
-//     for(let i = 0; i <bookCollection.length; i++){
-//         if(bookCollection[i].chapters >= numero1){
-//             arrayFinal.push(bookCollection[i]);
-//         }
-//     }
+/*
+Using the bookCollection array, write a function that receives a keyword string.
+The function must:
+1. Find all books whose keywords array includes that keyword.
+2. Return an array containing only the titles of the matching books
+Rules:
+The search must be case-insensitive.
+If no books match, return an empty array.
+Example input:
+Keyword → "science"
+Example output:
+["1984", "A Brief History of Time", "Cosmos"]
 
-//     return arrayFinal;
+*/
 
-// }
+function titleBook(word) {
 
-// console.log(getBooksByChaptersNumber(3))
+    let arrayFinal = [];
+    let wordFinal = word.toUpperCase();
 
-
-
-function getBooksByGenre(genere) {
-
-    let arrayFinal = []
     for (let i = 0; i < bookCollection.length; i++) {
-        if (bookCollection[i].genre.includes(genere)) {
-            arrayFinal.push(bookCollection[i]);
+
+        let keywords = bookCollection[i].keywords.map(k => k.toUpperCase());
+
+        if (keywords.includes(wordFinal)) {
+            arrayFinal.push(bookCollection[i].title)
         }
+
     }
+
     return arrayFinal;
+
 }
 
-console.log(getBooksByGenre("Dystopian"))
-
-
-
-function getBooksByAmazonRating(numero){
-
-    let arrayFinal = []
-
-    for(let i = 0; i < bookCollection.length; i++){
-        if(bookCollection[i].ratings >= numero ){
-            arrayFinal.push(bookCollection[i]);
-        }
-    }
-
-    return arrayFinal;
-
-}   
-
-console.log(getBooksByAmazonRating(3.0))
+console.log(titleBook("ecology"));
