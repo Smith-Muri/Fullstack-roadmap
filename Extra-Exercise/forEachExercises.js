@@ -508,7 +508,7 @@ const bookCollection = [
 //         }
 //     });
 
-//     return arrayFinal;  
+//     return arrayFinal;
 // }
 // console.log(getSciFiBooks());
 
