@@ -77,17 +77,17 @@ const personas = [
  *      { nombre: "Mariana", edad: 30, intereses: ["Fotografía"], ciudad: "Medellín", genero: "Femenino" }
  */
 
-// function encontrarParejaEnLaCiudad(personaObjetivo) {
-//     let pareja;
+function encontrarParejaEnLaCiudad(personaObjetivo) {
+    let pareja;
 
-//     for (let persona of personas) {
-//         if (persona.genero !== personaObjetivo.genero) pareja = persona;
-//     }
+    for (let persona of personas) {
+        if((persona.genero !== personaObjetivo.genero) && (persona.ciudad === personaObjetivo.ciudad))pareja = persona;
+    }
 
-//     return pareja;
-// }
+    return pareja;
+}
 
-// console.log(encontrarParejaEnLaCiudad({ nombre: "Camilo", edad: 28, intereses: ["Arte"], ciudad: "Medellín", genero: "Masculino" }));
+console.log(encontrarParejaEnLaCiudad({ nombre: "Camilo", edad: 28, intereses: ["Arte"], ciudad: "Medellín", genero: "Masculino" }));
 
 
 /**
@@ -107,7 +107,7 @@ const personas = [
 //     let parejasPotenciales = [];
 
 //     for (let persona of personas) {
-//         if ((persona.genero !== personaObjetivo.genero) && (persona.edad - personaObjetivo.edad <=5)  && (persona.ciudad === personaObjetivo.ciudad)) parejasPotenciales = persona;
+//         if ((persona.genero !== personaObjetivo.genero) && Math.abs(persona.edad - personaObjetivo.edad) <=5  && (persona.ciudad === personaObjetivo.ciudad)) parejasPotenciales = persona;
 //     }
 
 //     return parejasPotenciales;
@@ -125,18 +125,18 @@ const personas = [
 
 // el siguiente console.log debe imprimir 3 parejas potenciales (Daniela de 29 años, Valentina de 30 años y Daniela de 58 años)
 
-function encontrarParejaPorInteres(personaObjetivo) {
+// function encontrarParejaPorInteres(personaObjetivo) {
 
 
-    let parejasPotenciales = [];
+//     let parejasPotenciales = [];
 
-    for (let persona of personas) {
-        for (let i = 0; i < persona.intereses.length; i++) {
-            if ((persona.genero !== personaObjetivo.genero) && (persona.intereses.length.toPrecision() === personaObjetivo.intereses.length.toPrecision()) && (persona.ciudad === personaObjetivo.ciudad)) parejasPotenciales = persona;
-        }
-    }
+//     for (let persona of personas) {
+//         for (let i = 0; i < persona.intereses.length; i++) {
+//             if ((persona.genero !== personaObjetivo.genero) && (persona.intereses.length.toPrecision() === personaObjetivo.intereses.length.toPrecision()) && (persona.ciudad === personaObjetivo.ciudad)) parejasPotenciales = persona;
+//         }
+//     }
 
-    return parejasPotenciales;
+//     return parejasPotenciales;
 
-}
-console.log(encontrarParejaPorInteres({ nombre: "Lucía", edad: 19, intereses: ["Música", "Yoga"], ciudad: "Medellín", genero: "Femenino" }));
+// }
+// console.log(encontrarParejaPorInteres({ nombre: "Lucía", edad: 19, intereses: ["Música", "Yoga"], ciudad: "Medellín", genero: "Femenino" }));
