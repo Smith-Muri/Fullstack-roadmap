@@ -1,32 +1,47 @@
 const studentsList = require('./students_db.json');
 const universiList = require('./universities_db.json');
 
-
-let srt = "Matriculado"
-function fraude(srt) {
-
-    let student = studentsList.find(u => u.status === srt)
-    let uni = universiList.find(k => k.universityName)
-
-
+function fraude() {
+    let resultado = [];
 
     for (let i = 0; i < studentsList.length; i++) {
+        let student = studentsList[i];
 
-        for (let j = 0; j < studentsList[i].status; j++) {
-            let estu = studentsList[i]
 
-            if (estu[i] === "Matriculado") {
+        if (student.status === "Matriculado") {
+
+            let university = null;
+
+            
+            for (let j = 0; j < universiList.length; j++) {
+                if (universiList[j].code === student.universityCode) {
+                    university = universiList[j];
+                    break;
+                }
+            }
+
+            if (university !== null) {
+
+                let carreraEncontrada = false;
+
+                for (let k = 0; k < university.offeredCareers.length; k++) {
+                    if (university.offeredCareers[k] === student.career) {
+                        carreraEncontrada = true;
+                        break;
+                    }
+                }
+                if (!carreraEncontrada) {
+                    resultado.push({
+                        fullName: student.firstName + " " + student.lastName,
+                        userId: student.userId,
+                        universityName: university.universityName
+                    });
+                }
             }
         }
     }
 
-    return {
-        fullname: student.firstName,
-        userId: student.userId,
-        universityName: uni.universityName
-    }
-
-
+    return resultado;
 }
 
-console.log(fraude(srt))
+console.log(fraude());
