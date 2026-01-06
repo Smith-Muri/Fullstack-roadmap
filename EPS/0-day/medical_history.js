@@ -33,10 +33,7 @@ function userLastAppointment(identifier) {
     const record = medicalHistory[i];
 
     if (record.userId === user.userId) {
-      if (
-        !lastAppointment ||
-        record.date > lastAppointment.date
-      ) {
+      if (!lastAppointment || record.date > lastAppointment.date ) {
         lastAppointment = record;
       }
     }

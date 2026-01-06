@@ -203,51 +203,51 @@ const datos = [
 
 
 
-// function userCity(identifier) {
+function userCity(identifier) {
 
-//   const normalizar = text => text
-//     .toLowerCase()
-//     .normalize("NFD")
-//     .replace(/[\u0300-\u036f]/g, "")
-//     .trim();
+  const normalizar = text => text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
 
-//   const normaName = normalizar(identifier);
+  const normaName = normalizar(identifier);
 
-//   let user;
-//   if (identifier.startsWith('usr_')) {
-//     user = datos.find(u => u.userId === identifier);
-//   } else {
-//     user = datos.find(u => normalizar (`${u.firstName} ${u.lastName}`) === normaName);
-//   }
-//   return user ? user.city : "usuario no existe";
-// }
-// console.log(userCity("andres gomez"));
-
-
-// function userRiskByAge(name) {
-
-//   const normalizar = text => text
-//     .toLowerCase()
-//     .normalizar("NFD")
-//     .replace(/[\u0300-\u036f]/g, "")
-//     .trim();
-
-//     const normaName = normalizar(name)
-
-//   let user = datos.find(u => normalizar(`${u.firstName} ${u.lastName}` === name));
-//   if (!name) return "usuario no existe";
-//     if (user.age > 60) {
-//       return "alto"
-//     } else if (user.age >= 40 && user.age < 60) {
-//       return "medio"
-//     } else if (user.age < 40) {
-//       return "bajo"
-//     }
-//   }
+  let user;
+  if (identifier.startsWith('usr_')) {
+    user = datos.find(u => u.userId === identifier);
+  } else {
+    user = datos.find(u => normalizar (`${u.firstName} ${u.lastName}`) === normaName);
+  }
+  return user ? user.city : "usuario no existe";
+}
+console.log(userCity("andres gomez"));
 
 
+function userRiskByAge(name) {
 
-// console.log(userRiskByAge("alicia Montoya"));
+  const normalizar = text => text
+    .toLowerCase()
+    .normalizar("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+    const normaName = normalizar(name)
+
+  let user = datos.find(u => normalizar(`${u.firstName} ${u.lastName}` === name));
+  if (!name) return "usuario no existe";
+    if (user.age > 60) {
+      return "alto"
+    } else if (user.age >= 40 && user.age < 60) {
+      return "medio"
+    } else if (user.age < 40) {
+      return "bajo"
+    }
+  }
+
+
+
+console.log(userRiskByAge("alicia Montoya"));
 
 
 
